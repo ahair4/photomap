@@ -20,9 +20,10 @@ function createPhotoMap () {
   var map = L.map('map').setView([42.730549029220384, -84.48172751457135], 16);
   
   // create basemap object. See examples at https://leaflet-extras.github.io/leaflet-providers/preview/
-  var basemap = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}', {
-  	maxZoom: 16,
-  	attribution: 'USGS'
+ var Thunderforest_Landscape = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
+	attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	apikey: '<your apikey>',
+	maxZoom: 22
   }).addTo(map);
   
   // use Papa Parse (papaparse.com) to get the Google Sheets CSV
