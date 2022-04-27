@@ -20,11 +20,10 @@ function createPhotoMap () {
   var map = L.map('map').setView([42.730549029220384, -84.48172751457135], 16);
   
   // create basemap object. See examples at https://leaflet-extras.github.io/leaflet-providers/preview/
- var Thunderforest_Landscape = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
-	attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-	apikey: '<your apikey>',
-	maxZoom: 22
-  }).addTo(map);
+ var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+});
   
   // use Papa Parse (papaparse.com) to get the Google Sheets CSV
   Papa.parse(csvUrl, {
